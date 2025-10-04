@@ -1,2 +1,2 @@
 // Simple cache bump if needed
-self.addEventListener('install',e=>self.skipWaiting());
+self.addEventListener('install',e=>self.skipWaiting()); 
