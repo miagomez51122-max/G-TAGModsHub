@@ -2,102 +2,158 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>G-TAG Mods — Quest 3/3S & PCVR</title>
+  <meta name="description" content="Safe, beginner-friendly Gorilla Tag modding guides for Quest 3/3S and PCVR."/>
   <meta name="theme-color" content="#0ea5e9"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root{--bg:#0a0f1e;--panel:#101833;--text:#e7ecfb;--muted:#a8b3cf;--brand:#22d3ee;--banana:#facc15}
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-    a{color:inherit;text-decoration:none}
-    .nav{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(10,15,30,.95),rgba(10,15,30,.7));backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav-inner{max-width:1200px;margin:auto;padding:1rem 1.25rem;display:flex;align-items:center;gap:.75rem}
-    .logo{display:flex;align-items:center;gap:.6rem;font-weight:800;color:var(--banana);font-size:1.25rem}
-    .logo-badge{width:48px;height:48px;border-radius:50%;overflow:hidden;border:2px solid var(--brand);box-shadow:0 0 10px rgba(34,211,238,.5)}
-    .logo-badge img{width:100%;height:100%;object-fit:cover}
-    .links{display:flex;align-items:center;margin-left:auto}
-    .links a{color:var(--muted);font-weight:600;margin-left:1rem}
-    .links a:hover,.links a.active{color:var(--brand)}
-    .nav-toggle{display:none;margin-left:auto;width:48px;height:48px;border:1px solid rgba(255,255,255,.12);background:rgba(11,18,39,.85);border-radius:12px;cursor:pointer;align-items:center;justify-content:center}
-    .nav-toggle span{width:22px;height:2px;background:#e7ecfb;border-radius:2px;display:block}
-    .nav-toggle span+span{margin-top:5px}
-    @media(max-width:900px){
-      .nav-toggle{display:inline-flex}
-      .links{position:absolute;left:0;right:0;top:100%;display:none;flex-direction:column;background:linear-gradient(180deg,rgba(10,15,30,.98),rgba(10,15,30,.94));border-bottom:1px solid rgba(255,255,255,.08);padding:.5rem 1rem 1rem}
-      .links a{margin:0;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.06);color:#e7ecfb;font-weight:700}
-      .links a:last-child{border-bottom:none}
-      .nav.open .links{display:flex}
-    }
-    .hero{max-width:1200px;margin:auto;padding:3rem 1.25rem}
-    .btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--brand);color:#001018;padding:.85rem 1.15rem;border-radius:.9rem;font-weight:800}
-    footer{margin-top:3rem;border-top:1px solid rgba(255,255,255,.08);background:#0a0e1c}
-    .foot{max-width:1200px;margin:auto;padding:2rem 1.25rem;color:#a8b3cf;display:flex;justify-content:space-between;gap:1rem}
-  </style>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div class="nav">
+  <noscript>Please enable JavaScript to view this site.</noscript>
+  <div id="loading" class="loading">Loading site…</div>
+
+  <div class="bgfx"></div>
+  <div class="floats"><span class="banana">🍌</span><span class="banana">🍌</span>
+    <span class="banana">🍌</span><span class="banana">🍌</span><span class="banana">🍌</span></div>
+  <div id="scrollProgress" aria-hidden="true"></div>
+
+  <header class="nav" role="navigation" aria-label="Primary">
     <div class="nav-inner">
-      <div class="logo">
+      <a class="logo" href="#top">
         <div class="logo-badge">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST54uXTu2PNodn4TPxnDap92xOP-uD4OBc2w&s" alt="Gorilla Tag logo">
         </div>
         <span>G-TAG Mods</span>
-      </div>
+      </a>
 
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryLinks" aria-label="Open menu">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false"
+              aria-controls="primaryLinks" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
 
-      <div class="links" id="primaryLinks">
+      <nav class="links" id="primaryLinks">
         <a href="#pcvr">PCVR Guide</a>
         <a href="#quest">Quest Guide</a>
         <a href="#videos">Videos</a>
         <a href="#downloads">Downloads</a>
         <a href="#faq">FAQ</a>
         <a href="#safety">Safety</a>
-      </div>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <main>
+  <main id="top">
     <section class="hero">
-      <h1>Mod Gorilla Tag the <span style="color:var(--banana)">Right</span> Way</h1>
-      <p>Header button fixed: hamburger opens and closes navigation on tablets/phones.</p>
-      <p style="margin-top:1rem"><a class="btn" href="#pcvr">Start PCVR Guide</a></p>
+      <div class="hero-wrap">
+        <div>
+          <span class="badge">Educational • Private • Safe</span>
+          <h1>Mod Gorilla Tag the <span class="accent">Right</span> Way</h1>
+          <p class="lead">Crystal-clear steps for Meta Quest 3/3S and PCVR. We link only official tools and teach safe practice in private lobbies.</p>
+          <div class="cta">
+            <a class="btn" href="#pcvr">Start PCVR Guide</a>
+            <a class="btn secondary" href="#quest">Quest‑Only (Advanced)</a>
+          </div>
+        </div>
+        <div class="panel-hero">
+          <div class="monitor" aria-label="Demo monitor showing mod status">
+            <div class="bar"></div>
+            <div class="term">
+              <div><span class="prompt">$</span> steamapps/common/GorillaTag ▶ BepInEx detected</div>
+              <div><span class="prompt">$</span> Loading: Utilla • ComputerInterface • Newtonsoft.JSON</div>
+              <div><span class="prompt">$</span> Hooks patched • Plugins ready</div>
+              <div>join private_lobby ▍</div>
+            </div>
+            <div class="ticker">BepInEx initialized • Utilla loaded • Loading plugins…</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pcvr">
+      <h2>PCVR Modding Guide</h2>
+      <p class="sub">Install mods on the PC version and play via Link, Air Link, or Virtual Desktop.</p>
+      <div class="card">
+        <details open><summary>Install Gorilla Tag on Steam</summary><p class="sub">Install to the default Steam path.</p></details>
+        <details><summary>Install BepInEx (x64)</summary></details>
+        <details><summary>Run once, then close</summary></details>
+        <details><summary>Use Monke Mod Manager</summary></details>
+        <details><summary>Connect Quest (Link/Air Link/VD)</summary></details>
+        <details><summary>Join private lobby and test</summary></details>
+      </div>
+    </section>
+
+    <section id="quest">
+      <h2>Quest‑Only Modding</h2>
+      <p class="sub">Requires Developer Mode and SideQuest. For demos only.</p>
+      <div class="cards">
+        <div class="card"><h3>Enable Developer Mode</h3><p>Meta app → Devices → Developer Mode → On</p></div>
+        <div class="card"><h3>Install SideQuest</h3><p>Sideload utilities and file managers</p></div>
+        <div class="card"><h3>Sideload Carefully</h3><p>Game updates may break mods</p></div>
+      </div>
+    </section>
+
+    <section id="videos">
+      <h2>Video Help</h2>
+      <p class="sub">Tap a thumbnail to watch.</p>
+      <div class="video-grid">
+        <a class="thumb" href="https://www.youtube.com/watch?v=0p2zF7G7kZc" target="_blank" rel="noopener">
+          <img src="https://i.ytimg.com/vi/0p2zF7G7kZc/hqdefault.jpg" alt="Install SideQuest"><span>Install SideQuest</span>
+        </a>
+        <a class="thumb" href="https://www.youtube.com/watch?v=U2C1Ok5zn7Q" target="_blank" rel="noopener">
+          <img src="https://i.ytimg.com/vi/U2C1Ok5zn7Q/hqdefault.jpg" alt="Monke Mod Manager"><span>Monke Mod Manager</span>
+        </a>
+        <a class="thumb" href="https://www.youtube.com/watch?v=bbVR9rZLKj8" target="_blank" rel="noopener">
+          <img src="https://i.ytimg.com/vi/bbVR9rZLKj8/hqdefault.jpg" alt="BepInEx Setup"><span>BepInEx Setup</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="downloads">
+      <h2>Official Downloads</h2>
+      <p class="sub">Links to official release pages.</p>
+      <div class="cards">
+        <div class="card"><h3>SideQuest</h3><p><a class="btn" href="https://sidequestvr.com/download" target="_blank" rel="noopener">Get SideQuest</a></p></div>
+        <div class="card"><h3>BepInEx</h3><p><a class="btn" href="https://github.com/BepInEx/BepInEx/releases" target="_blank" rel="noopener">Get BepInEx</a></p></div>
+        <div class="card"><h3>Monke Mod Manager</h3><p><a class="btn" href="https://github.com/DeadlyKitten/MonkeModManager/releases" target="_blank" rel="noopener">Get MMM</a></p></div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2>FAQ</h2>
+      <div class="card">
+        <details><summary>Will I get banned?</summary><p>Use mods only in private lobbies.</p></details>
+        <details><summary>Do I need a PC?</summary><p>PCVR is recommended for stability.</p></details>
+        <details><summary>Are the downloads safe?</summary><p>We link to official GitHub and SideQuest pages only.</p></details>
+      </div>
+    </section>
+
+    <section id="safety">
+      <h2>Safety & Rules</h2>
+      <div class="card">
+        <ul>
+          <li>Mods are for educational/private use.</li>
+          <li>Never cheat in public lobbies.</li>
+          <li>Back up your game folder before modding.</li>
+          <li>Prefer a separate account for experiments.</li>
+          <li>Stick to official tool links.</li>
+        </ul>
+      </div>
     </section>
   </main>
 
   <footer>
     <div class="foot">
       <div>© 2025 G-TAG Mods — independent educational resource.</div>
-      <div><a href="#top" style="color:var(--brand);font-weight:800">Top</a></div>
+      <div><a href="#top">Top</a></div>
     </div>
   </footer>
 
-  <script>
-    const nav = document.querySelector('.nav');
-    const toggle = document.getElementById('navToggle');
-    const linksPanel = document.getElementById('primaryLinks');
+  <button id="feedbackBtn" aria-label="Report an issue">Report an issue</button>
+  <a id="toTop" href="#top" aria-label="Back to top">↑ Top</a>
 
-    if (toggle && nav && linksPanel){
-      toggle.addEventListener('click', () => {
-        const open = nav.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-      linksPanel.addEventListener('click', e => {
-        if (e.target.closest('a') && nav.classList.contains('open')) {
-          nav.classList.remove('open');
-          toggle.setAttribute('aria-expanded','false');
-        }
-      });
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 900 && nav.classList.contains('open')) {
-          nav.classList.remove('open');
-          toggle.setAttribute('aria-expanded','false');
-        }
-      });
-    }
-  </script>
+  <script src="./script.js" defer></script>
 </body>
 </html>
